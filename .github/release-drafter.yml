@@ -6,45 +6,36 @@ categories:
   - title: 💥 Breaking changes
     labels:
       - breaking
-  - title: 🚀 New features and improvements
+  - title: "📋 Markdown Templates"
     labels:
-      - enhancement
-  - title: 🐛 Bug fixes
+      - "templates"
+  - title: "⚙️ Reusable Workflows"
     labels:
-      - bug
+      - "workflows"
   - title: 📚 Documentation
     labels:
       - documentation
-    collapse-after: 10
-  - title: "🧰 Maintenance"
-    labels:
-      - chore
-      - maintenance
   - title: 📦 Dependency updates
     labels:
       - dependencies
     collapse-after: 10
-  - title: "📋 Markdown Templates"
-    labels:
-      - "markdown-templates"
-  - title: "⚙️ Reusable Workflows"
-    labels:
-      - "reusable-workflows"
   - title: ✍ Other changes
+
 
 # Automatically add labels based on file paths
 autolabeler:
-  - label: "reusable-workflows"
+  - label: "workflows"
     files:
-      - ".github/workflows/[!_]*.yml"
-      - ".github/workflows/[!_]*.yaml"
-  - label: "markdown-templates"
+      - ".github/workflows/*.yml"
+      - ".github/workflows/*.yaml"
+  - label: "templates"
     files:
       - "templates/**.md"
   - label: "documentation"
     files:
       - "docs/**/*"
       - "*.md"
+
 
 template: |
   ## What's Changed in v$RESOLVED_VERSION
@@ -53,6 +44,4 @@ template: |
 
   **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
 
-  ## Contributors
-
-  $CONTRIBUTORS
+  **Contributors**: $CONTRIBUTORS
