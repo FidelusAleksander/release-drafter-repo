@@ -36,7 +36,7 @@ categories:
 autolabeler:
   - label: "reusable-workflows"
     files:
-      - ".github/workflows/[!_]*.yml"
+      - ".github/workflows/*.yml"
       - ".github/workflows/[!_]*.yaml"
   - label: "markdown-templates"
     files:
