@@ -15,7 +15,6 @@ categories:
   - title: 📚 Documentation
     labels:
       - documentation
-    collapse-after: 10
   - title: 📦 Dependency updates
     labels:
       - dependencies
@@ -36,10 +35,7 @@ autolabeler:
     files:
       - "docs/**/*"
       - "*.md"
-  - label: "skip-changelog"
-    files:
-      - ".github/workflows/_*.yml"
-      - ".github/workflows/_*.yaml"
+
 
 template: |
   ## What's Changed in v$RESOLVED_VERSION
