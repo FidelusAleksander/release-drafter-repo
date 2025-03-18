@@ -1,16 +1,58 @@
-name-template: 'v$NEXT_PATCH_VERSION'
-tag-template: 'v$NEXT_PATCH_VERSION'
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+
+# Emoji reference: https://gitmoji.carloscuesta.me/
 categories:
-  - title: '🚀 Features'
+  - title: 💥 Breaking changes
     labels:
-      - 'feature'
-  - title: '🐛 Bug Fixes'
+      - breaking
+  - title: 🚀 New features and improvements
     labels:
-      - 'bug'
-  - title: '🧰 Maintenance'
+      - enhancement
+  - title: 🐛 Bug fixes
     labels:
-      - 'chore'
-change-template: '- $TITLE (#$NUMBER)'
+      - bug
+  - title: 📚 Documentation
+    labels:
+      - documentation
+    collapse-after: 10
+  - title: "🧰 Maintenance"
+    labels:
+      - chore
+      - maintenance
+  - title: 📦 Dependency updates
+    labels:
+      - dependencies
+    collapse-after: 10
+  - title: "📋 Markdown Templates"
+    labels:
+      - "markdown-templates"
+  - title: "⚙️ Reusable Workflows"
+    labels:
+      - "reusable-workflows"
+  - title: ✍ Other changes
+
+# Automatically add labels based on file paths
+autolabeler:
+  - label: "reusable-workflows"
+    files:
+      - ".github/workflows/[!_]*.yml"
+      - ".github/workflows/[!_]*.yaml"
+  - label: "markdown-templates"
+    files:
+      - "templates/**.md"
+  - label: "documentation"
+    files:
+      - "docs/**/*"
+      - "*.md"
+
 template: |
-  ## What's Changed
+  ## What's Changed in v$RESOLVED_VERSION
+
   $CHANGES
+
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+
+  ## Contributors
+
+  $CONTRIBUTORS
