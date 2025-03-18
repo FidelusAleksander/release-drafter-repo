@@ -2,20 +2,27 @@ name: Release Drafter
 
 on:
   push:
+    # branches to consider in the event; optional, defaults to all
     branches:
       - main
+      - master
+
+  # pull_request_target event is required for autolabeler to support PRs from forks
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+
   workflow_dispatch:
 
 permissions:
-    pull-requests: write # to add label to PR (release-drafter/release-drafter)
-    contents: write # to create a github release (release-drafter/release-drafter)
+    pull-requests: write # to add label to PR
+    contents: write # to create a github release
 
 jobs:
   update_release_draft:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Update Release Draft
         uses: release-drafter/release-drafter@v5
