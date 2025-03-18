@@ -4,37 +4,17 @@ tag-template: "v$RESOLVED_VERSION"
 # Emoji reference: https://gitmoji.carloscuesta.me/
 categories:
   - title: 💥 Breaking changes
-    labels:
-      - breaking
-  - title: "📋 Markdown Templates"
-    labels:
-      - "templates"
-  - title: "⚙️ Reusable Workflows"
-    labels:
-      - "workflows"
+    label: breaking
+  - title: 📋 Markdown Templates
+    label: templates
+  - title: ⚙️ Reusable Workflows
+    label: workflows
   - title: 📚 Documentation
-    labels:
-      - documentation
+    label: documentation
   - title: 📦 Dependency updates
-    labels:
-      - dependencies
+    label: dependencies
     collapse-after: 10
   - title: ✍ Other changes
-
-
-# Automatically add labels based on file paths
-autolabeler:
-  - label: "workflows"
-    files:
-      - ".github/workflows/*.yml"
-      - ".github/workflows/*.yaml"
-  - label: "templates"
-    files:
-      - "templates/**.md"
-  - label: "documentation"
-    files:
-      - "docs/**/*"
-      - "*.md"
 
 
 template: |
@@ -44,4 +24,5 @@ template: |
 
   **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
 
-  **Contributors**: $CONTRIBUTORS
+exclude-labels:
+  - 'skip-changelog'
