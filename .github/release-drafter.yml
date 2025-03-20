@@ -5,10 +5,12 @@ tag-template: "v$RESOLVED_VERSION"
 categories:
   - title: 💥 Breaking changes
     label: breaking
-  - title: 📋 Markdown Templates
-    label: templates
-  - title: ⚙️ Reusable Workflows
-    label: workflows
+  - title: 🚀 New features and improvements
+    label: enhancement
+  - title: 🐛 Bug fixes
+    label: bug
+  - title: 🧰 Maintenance
+    label: maintenance
   - title: 📚 Documentation
     label: documentation
   - title: 📦 Dependency updates
