@@ -12,3 +12,8 @@ maintenance:
 enhancement:
 - changed-files:
   - any-glob-to-any-file: ['src/**/*']
+
+dependencies:
+- changed-files:
+  - any-glob-to-any-file: ['**/package.json', '**/package-lock.json', '**/yarn.lock', '**/pnpm-lock.yaml']
+  - any-glob-to-any-file: ['**/requirements.txt', '**/uv.lock', '**/poetry.lock']
